@@ -109,7 +109,7 @@ if (searchWords.length > 0) {
 }
 
 
-const baseSearchUrl = `${url}/video/${originalQuery}`;
+const baseSearchUrl = `/video/${originalQuery}`;
 
 function capitalizeWords(str: string): string {
   const words = str
@@ -126,7 +126,7 @@ function capitalizeWords(str: string): string {
 const displayQuery = capitalizeWords(originalQuery);
 
 const breadcrumbs = [
-  { name: 'Home', url: `${url}/` },
+  { name: 'Home', url: '/' },
   { name: `${displayQuery} di ${nama}`, url: null },
 ];
 ---
@@ -175,7 +175,7 @@ const breadcrumbs = [
     ) : (
       <div class="video-grid" itemprop="mainContentOfPage">
         {paginatedResults.map((video) => (
-          <VideoCard video={video} videoDetailPath={`${url}/${slugify(video.title)}-${video.id}`} />
+          <VideoCard video={video} videoDetailPath={`/${slugify(video.title)}-${video.id}`} />
         ))}
       </div>
     )}
@@ -183,7 +183,7 @@ const breadcrumbs = [
 
         <div class="video-grid">
           {randomPostsBelowSearch.map((video) => (
-            <VideoCard video={video} videoDetailPath={`${url}/${slugify(video.title)}-${video.id}/`} />
+            <VideoCard video={video} videoDetailPath={`/${slugify(video.title)}-${video.id}/`} />
           ))}
         </div>
 

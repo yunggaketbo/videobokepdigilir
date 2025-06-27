@@ -127,8 +127,8 @@ randomVideos.forEach(v => {
 const preconnectDomains = Array.from(allDomains);
 
 const breadcrumbs = [
-  { name: 'Home', url: `${url}/` },
-  { name: video.category, url: `${url}/category/${slugify(video.category)}/1` },
+  { name: 'Home', url: '/' },
+  { name: video.category, url: `/category/${slugify(video.category)}/1` },
   { name: video.title },
 ];
 
@@ -244,7 +244,7 @@ const schemaBreadcrumb = {
         <h2 class="section-title">Video Terkait {video.title}</h2>
         <div class="video-grid">
           {relatedVideos.map((relatedVideo) => (
-            <VideoCard video={relatedVideo} videoDetailPath={`${url}/${slugify(relatedVideo.title)}-${relatedVideo.id}`} />
+            <VideoCard video={relatedVideo} videoDetailPath={`/${slugify(relatedVideo.title)}-${relatedVideo.id}`} />
           ))}
         </div>
       </section>
@@ -260,7 +260,7 @@ const schemaBreadcrumb = {
         <h2 class="section-title">Video Pilihan</h2>
         <div class="video-grid">
           {randomVideos.map((randomVideo) => (
-            <VideoCard video={randomVideo} videoDetailPath={`${url}/${slugify(randomVideo.title)}-${randomVideo.id}`} />
+            <VideoCard video={randomVideo} videoDetailPath={`/${slugify(randomVideo.title)}-${randomVideo.id}`} />
           ))}
         </div>
       </section>
