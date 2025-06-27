@@ -4,7 +4,7 @@ import Layout from '../../../layouts/BaseLayout.astro';
 import VideoCard from '../../../components/VideoCard.astro';
 import { getAllVideos, type VideoData } from '../../../utils/data.ts';
 import { slugify } from '../../../utils/slugify';
-import { url, nama } from '../../../utils/site.ts';
+import { nama } from '../../../utils/site.ts';
 
 export const prerender = true;
 
@@ -70,9 +70,9 @@ export async function getStaticPaths() {
 const { categoryName, currentPage, totalPages, videos: paginatedVideos, preconnectDomains } = Astro.props;
 
 const breadcrumbs = [
-  { name: 'Home', url: `${url}/` },
-  { name: 'Category', url: `${url}/category/` },
-  { name: `${categoryName} | Page ${currentPage}`, url: `${url}/category/${slugify(categoryName)}/${currentPage}` },
+  { name: 'Home', url: '/' },
+  { name: 'Category', url: '/category/' },
+  { name: `${categoryName} | Page ${currentPage}`, url: `/category/${slugify(categoryName)}/${currentPage}` },
 ];
 ---
 
